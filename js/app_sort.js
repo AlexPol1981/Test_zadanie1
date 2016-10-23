@@ -10,3 +10,4 @@ angular.module('sortApp', [])
     { country: 'Rusian', city: 'Moskov',    street: 'Kievskii',      home: 5, index: 432111, date: '01.05.2014, 23:00'},
     { country: 'Rusian', city: 'Samara',    street: 'Volokalamskay', home: 7, index: 123123, date: '03.02.2015, 14:00'}
   ];
+} )
