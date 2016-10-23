@@ -20,7 +20,7 @@
   </head>
   <body ng-app="sortApp" ng-controller="mainController">
     <h1>Тестовое задание</h1>
-  <script src="angular.min.js"></script>
+  <script src="js/angular.min.js"></script>
   <script src="js/app_sort.js"></script>
 
 
@@ -31,12 +31,53 @@
    <table class="table table-hover">
         <thead>
             <tr>
-                <th>Страна</th>
-                <th>Город</th>
-                <th>Улица</th>
-                <th>Дом</th>
-                <th>Индекс</th>
-                <th>Дата</th>
+                <th>
+                 <a href="#" ng-click="sortType = 'country'; sortReverse = !sortReverse">
+                  Страна
+                  <span ng-show="sortType == 'country' && !sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="sortType == 'country' && sortReverse" class="fa fa-caret-up"></span>
+                 </a>
+                </th> 
+                
+                <th>
+                 <a href="#" ng-click="sortType = 'city'; sortReverse = !sortReverse">
+                  Город
+                  <span ng-show="sortType == 'city' && !sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="sortType == 'city' && sortReverse" class="fa fa-caret-up"></span>
+                 </a>
+                </th>
+                
+                <th>
+                 <a href="#" ng-click="sortType = 'street'; sortReverse = !sortReverse">
+                  Улица
+                  <span ng-show="sortType == 'street' && !sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="sortType == 'street' && sortReverse" class="fa fa-caret-up"></span>
+                 </a>
+                </th> 
+                
+                <th>
+                 <a href="#" ng-click="sortType = 'home'; sortReverse = !sortReverse">
+                  Дом
+                  <span ng-show="sortType == 'home' && !sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="sortType == 'home' && sortReverse" class="fa fa-caret-up"></span>
+                 </a>
+                </th> 
+                
+                <th>
+                 <a href="#" ng-click="sortType = 'index'; sortReverse = !sortReverse">
+                  Индекс
+                  <span ng-show="sortType == 'index' && !sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="sortType == 'index' && sortReverse" class="fa fa-caret-up"></span>
+                 </a>
+                </th>
+                
+                <th>
+                 <a href="#" ng-click="sortType = 'date'; sortReverse = !sortReverse">
+                  Дата
+                  <span ng-show="sortType == 'date' && !sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="sortType == 'date' && sortReverse" class="fa fa-caret-up"></span>
+                 </a>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -48,7 +89,7 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr  ng-repeat="dat in database">
+            <tr  ng-repeat="dat in database | orderBy:sortType:sortReverse">
                 <td>{{dat.country}}</td>
                 <td>{{dat.city}}</td>
                 <td>{{dat.street}}</td>
