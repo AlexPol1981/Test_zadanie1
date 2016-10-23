@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Тестовое задание Симбирсофт</title>
+    <title>Тестовое задание</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="css/bootstrap.min.css" rel="stylesheet"> 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -16,9 +16,19 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+ 
   </head>
-  <body>
-   <table class="table table-striped">
+  <body ng-app="sortApp" ng-controller="mainController">
+    <h1>Тестовое задание</h1>
+  <script src="angular.min.js"></script>
+  <script src="js/app_sort.js"></script>
+
+
+
+
+
+
+   <table class="table table-hover">
         <thead>
             <tr>
                 <th>Страна</th>
@@ -38,34 +48,36 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr>
-                <td>Россия</td>
-                <td>Ульяновск</td>
-                <td>ул.Ленина</td>
-                <td>1</td>
-                <td>432071</td>
-                <td>10.04.2014, 12:21</td>
+            <tr  ng-repeat="dat in database">
+                <td>{{dat.country}}</td>
+                <td>{{dat.city}}</td>
+                <td>{{dat.street}}</td>
+                <td>{{dat.home}}</td>
+                <td>{{dat.index}}</td>
+                <td>{{dat.date}}</td>
             </tr>
-            <tr>
-                <td>Россия</td>
-                <td>Ульяновск</td>
-                <td>пр-т Нариманова</td>
-                <td>2</td>
-                <td>432072</td>
-                <td>15.03.2014, 15:34</td>
-            </tr>
-            <tr>
-                <td>Россия</td>
-                <td>Москва</td>
-                <td>просп-т Киевский</td>
-                <td>5</td>
-                <td>123123</td>
-                <td>01.05.2014, 23:00</td>
-            </tr>
+
         </tbody>
     </table>
 
 
+
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<ul class="pagination">
+					<li><a href="#">&lt;</a></li>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">&gt;</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+		
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
