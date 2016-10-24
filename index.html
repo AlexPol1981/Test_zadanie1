@@ -76,14 +76,14 @@
         </thead>
         <tbody>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><input type="text"  ng-model="search_country"> </td>
+                <td><input type="text"  ng-model="search_city"> </td>
+                <td><input type="text"  ng-model="search_street"> </td>
+                <td><input type="text"  ng-model="search_home"></td>
+                <td><input type="text"  ng-model="search_index"></td>
+                <td><input type="text"  ng-model="search_date"></td>
             </tr>
-            <tr  ng-repeat="dat in database | orderBy:sortType:sortReverse">
+            <tr  ng-repeat="dat in database | orderBy:sortType:sortReverse | filter:search_country | filter:search_city | filter:search_street | filter:search_home | filter:search_index | filter:search_date"> 
                 <td>{{dat.country}}</td>
                 <td>{{dat.city}}</td>
                 <td>{{dat.street}}</td>
@@ -94,6 +94,7 @@
 
         </tbody>
     </table>
+<!--  -->
 
 
 
